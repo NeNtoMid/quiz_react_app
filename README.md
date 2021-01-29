@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Offcial link to app https://quiz-react-app-544b5.web.app/  
+## App made with Redux, custom hooks , React-Router , Gsap and Firebase
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
