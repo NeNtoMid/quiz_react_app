@@ -1,0 +1,152 @@
+.Question {
+	font-size: 1em;
+}
+
+.title {
+	color: #f6f6f8;
+	font-size: 2.3em;
+	text-align: center;
+
+	padding-top: 1em;
+	width: 80%;
+	margin: 0 auto;
+	font-weight: 400;
+}
+
+.timer {
+	padding-top: 2.5rem;
+}
+
+.answers {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	/* grid-template-rows: 3fr 3fr; */
+	/* grid-column-gap: 0rem; */
+	grid-row-gap: 1rem;
+	/* margin: 0 auto; */
+}
+.answerIcon {
+	background-color: #f9c23c;
+	display: block;
+	padding: 0.75rem;
+	width: 3rem;
+	width: 3rem;
+	border-radius: 50%;
+	font-size: 0.25em;
+	color: white;
+	margin: 0 auto;
+}
+
+.ConfirmSvg {
+	display: block;
+
+	width: 7rem;
+
+	margin-left: 3rem;
+	margin-top: 2rem;
+}
+
+.CancelSvg {
+	display: block;
+	width: 6rem;
+	margin-left: 3.5rem;
+	margin-top: 2rem;
+}
+
+.answerContent {
+	text-align: center;
+
+	font-size: 0.5em;
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 1.5em;
+	font-weight: 400;
+}
+.answer {
+	width: 80%;
+	height: 90%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 3em;
+	background-color: white;
+	border-radius: 1.2rem;
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+}
+
+.baseTimer {
+	position: relative;
+	width: 15rem;
+	height: 15rem;
+	margin: auto;
+}
+
+.baseTimer__svg {
+	transform: scaleX(1);
+}
+
+.baseTimer__circle {
+	fill: none;
+	stroke: none;
+}
+
+.baseTimer__pathElapsed {
+	stroke-width: 7px;
+	stroke: rgba(128, 128, 128, 0.63);
+}
+
+.baseTimer__pathRemaining {
+	stroke-width: 7px;
+	stroke-linecap: round;
+	transform: rotate(90deg);
+	transform-origin: center;
+	transition: 1s linear all;
+	fill-rule: nonzero;
+	stroke: currentColor;
+}
+
+.baseTimer__pathRemaining.arc {
+	color: rgba(255, 255, 255, 0.918);
+}
+
+.baseTimer__label {
+	position: absolute;
+	width: 15rem;
+	height: 15rem;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.8rem;
+	color: #f6f6f8;
+}
+
+@media screen and (max-width: 361px) {
+	html {
+		font-size: 62.5%;
+	}
+}
+
+@media screen and (min-width: 599px) and (max-width: 699px) and (max-height: 1000px) {
+	html {
+		font-size: 104.5%;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-width: 798px) and (min-height: 1000px) {
+	html {
+		font-size: 112.5%;
+	}
+}
+
+@media screen and (min-width: 799px) and (min-height: 1200px) {
+	html {
+		font-size: 140.5%;
+	}
+}
+
+@media screen and (min-width: 1200px) and (min-height: 624px) {
+	html {
+		font-size: 75.5%;
+	}
+}

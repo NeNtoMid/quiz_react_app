@@ -1,0 +1,18 @@
+.title {
+	color: #f6f6f8;
+	font-size: 5em;
+	text-align: center;
+	margin-top: 0;
+	padding-top: 1em;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	font-size: 10px;
+	background: linear-gradient(
+		180deg,
+		hsla(267, 50%, 53%, 1) 0%,
+		hsla(286, 82%, 56%, 1) 95%
+	);
+}

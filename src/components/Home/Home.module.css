@@ -1,0 +1,202 @@
+.Home {
+	width: 100%;
+	height: 100%;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+.HomeSvg {
+	display: block;
+	width: 65%;
+	height: 100%;
+	margin: 0 auto;
+	margin-top: 5rem;
+}
+
+.headerTextWrapper {
+	margin-left: 4rem;
+	margin-right: 4rem;
+}
+
+.title {
+	margin-top: 0.5rem;
+	font-size: 2.6rem;
+}
+
+.description {
+	font-size: 1.4rem;
+	margin-top: 2rem;
+	font-weight: 400;
+}
+
+@media screen and (max-width: 399px) and (max-height: 798px) {
+	html {
+		font-size: 11px;
+	}
+}
+
+@media screen and (max-width: 399px) and (max-height: 500px) {
+	html {
+		font-size: 9px;
+	}
+}
+
+@media screen and (max-width: 399px) and (min-height: 799px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width: 400px) {
+	html {
+		font-size: 13px;
+	}
+}
+
+@media screen and (min-width: 400px) and (min-height: 799px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-height: 700px) {
+	.HomeSvg {
+		width: 50%;
+	}
+}
+
+@media screen and (min-width: 600px) and (min-height: 700px) and (max-width: 999px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 600px) and (min-height: 1000px) and (max-width: 999px) {
+	html {
+		font-size: 20px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	html {
+		font-size: 15px;
+	}
+
+	.headerTextWrapper {
+		margin-left: 4rem;
+		margin-right: 4rem;
+		width: 60%;
+	}
+	.HomeSvg {
+		width: 45%;
+	}
+}
+
+@media screen and (min-width: 1000px) and (min-height: 624px) {
+	html {
+		font-size: 13px;
+	}
+
+	.headerTextWrapper {
+		margin-left: 4rem;
+		margin-right: 4rem;
+		width: 60%;
+	}
+	.HomeSvg {
+		margin-left: 4rem;
+		width: 25%;
+	}
+
+	.button {
+		width: 43rem;
+		height: 6rem;
+	}
+}
+
+@media screen and (min-width: 1000px) and (min-height: 1024px) {
+	html {
+		font-size: 18px;
+	}
+
+	.headerTextWrapper {
+		margin-left: 4rem;
+		margin-right: 4rem;
+		width: 60%;
+	}
+	.HomeSvg {
+		margin-left: 4rem;
+		width: 65%;
+	}
+
+	.title {
+		font-size: 3.5rem;
+	}
+
+	.description {
+		font-size: 2rem;
+	}
+
+	.button {
+		width: 35rem;
+		height: 6rem;
+	}
+}
+
+@media screen and (min-width: 1279px) and (min-height: 799px) {
+	html {
+		font-size: 14px;
+	}
+
+	.headerTextWrapper {
+		margin-left: 4rem;
+		margin-right: 4rem;
+		width: 60%;
+	}
+	.HomeSvg {
+		margin-left: 4rem;
+		width: 35%;
+	}
+
+	.title {
+		font-size: 3.5rem;
+	}
+
+	.description {
+		font-size: 2rem;
+	}
+
+	.button {
+		width: 35rem;
+		height: 6rem;
+	}
+}
+
+@media screen and (min-width: 1500px) {
+	html {
+		font-size: 18px;
+	}
+
+	.headerTextWrapper {
+		margin-left: 4rem;
+		margin-right: 4rem;
+		width: 40%;
+	}
+	.HomeSvg {
+		width: 30%;
+		margin-left: 4rem;
+	}
+}
+
+@media screen and (min-width: 1010px) and (max-width: 1049px) and (min-height: 1299px) and (max-height: 1369px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media screen and (min-width: 799px) and (max-width: 801px) and (min-height: 599px) and (max-height: 601px) {
+	html {
+		font-size: 11px;
+	}
+}

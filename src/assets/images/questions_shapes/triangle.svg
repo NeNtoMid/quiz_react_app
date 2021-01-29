@@ -1,0 +1,17 @@
+<svg  viewBox="0 0 395 383" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="triangle" clip-path="url(#clip0)" filter="url(#filter0_f)">
+<g id="Group">
+<path id="Vector" d="M384.248 312.399L221.868 40.484C216.629 31.71 207.4 26.473 197.182 26.473C186.964 26.473 177.736 31.71 172.497 40.484L10.118 312.399C4.74301 321.398 4.62402 332.214 9.79801 341.331C14.972 350.448 24.32 355.892 34.803 355.892H359.563C370.045 355.892 379.394 350.449 384.568 341.331C389.742 332.215 389.622 321.399 384.248 312.399Z" fill="#88949D"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f" x="0" y="-6" width="394.365" height="394.365" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="3" result="effect1_foregroundBlur"/>
+</filter>
+<clipPath id="clip0">
+<rect width="382.365" height="382.365" fill="white" transform="translate(6)"/>
+</clipPath>
+</defs>
+</svg>
