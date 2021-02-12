@@ -37,7 +37,7 @@ const useQuestion = (questNum, click, isClicked) => {
 				setCircleDasharray();
 
 				if (timeLeft === -1 && !isClicked) {
-					click('', 0);
+					click('', 0, true);
 					timeIsUp();
 				}
 			}, 1000);

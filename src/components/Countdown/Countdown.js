@@ -22,7 +22,8 @@ const Countdown = (props) => {
 					<div className='c'></div>
 					<div className='o'></div>
 					<div className='u'></div>
-					<div className='n'></div>
+					<div className='n'></div>rt
+					
 					<div className='t'></div>
 				</div>
 

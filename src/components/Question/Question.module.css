@@ -127,6 +127,12 @@
 	}
 }
 
+@media screen and (min-width: 362px) and (max-width: 399px) and (max-height: 874px) {
+	html {
+		font-size: 85.5%;
+	}
+}
+
 @media screen and (min-width: 599px) and (max-width: 699px) and (max-height: 1000px) {
 	html {
 		font-size: 104.5%;

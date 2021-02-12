@@ -22,7 +22,7 @@ const Home = (props) => {
 					<h1 className={classes.title}>What's your programming knowdledge?</h1>
 					<p className={classes.description}>
 						By answering these questions, you can find out what programming
-						knowdledge do you have
+						knowledge do you have
 					</p>
 				</div>
 			</header>

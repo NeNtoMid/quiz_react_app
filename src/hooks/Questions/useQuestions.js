@@ -118,6 +118,7 @@ const useQuestions = () => {
 		number: 0,
 		isClicked: false,
 		isCorrect: '',
+		timeIsUp: false,
 	});
 
 	const handleLeaveCountdown = useCallback(() => {
@@ -126,13 +127,14 @@ const useQuestions = () => {
 			display: true,
 			isClicked: false,
 			isCorrect: '',
+			timeIsUp: false,
 		}));
 	}, []);
 
 	const dispatch = useDispatch();
 
 	const checkAnswerValidity = useCallback(
-		(answer, questionNum) => {
+		(answer, questionNum, timeIsUp = false) => {
 			const correctAnswer = questionsAndAnswers[questionNum].correctAnswer;
 
 			if (displayQuestion.isClicked) {
@@ -158,6 +160,13 @@ const useQuestions = () => {
 					...prevState,
 					isClicked: true,
 					isCorrect: answer.toString(),
+				}));
+			}
+
+			if (timeIsUp) {
+				setDisplayQuestion((prevState) => ({
+					...prevState,
+					timeIsUp: true,
 				}));
 			}
 

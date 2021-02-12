@@ -93,13 +93,15 @@ const Question = (props) => {
 				{Object.keys(props.answers).map((answer, i) => {
 					let sectionStyles = {};
 
+					sectionStyles = { backgroundColor: '#fff', color: 'black' };
 					if (
 						(props.correctAnswer.toString() === answer.toString() &&
 							props.isCorrect.toString() === answer.toString() &&
 							props.isClicked) ||
 						(props.isClicked &&
 							props.correctAnswer.toString() !== props.isCorrect.toString() &&
-							answer.toString() === props.correctAnswer.toString())
+							answer.toString() === props.correctAnswer.toString() &&
+							!props.timeIsUp)
 					) {
 						sectionStyles = { backgroundColor: '#2ecc71', color: 'white' };
 					} else if (
@@ -109,6 +111,13 @@ const Question = (props) => {
 						props.isCorrect.toString() === answer
 					) {
 						sectionStyles = { backgroundColor: '#e74c3c', color: 'white' };
+					} else if (
+						props.isClicked &&
+						props.correctAnswer.toString() !== props.isCorrect.toString() &&
+						answer.toString() === props.correctAnswer.toString() &&
+						props.timeIsUp
+					) {
+						sectionStyles = { backgroundColor: '#f1c40f', color: 'white' };
 					}
 
 					return (

@@ -32,10 +32,12 @@ const Questions = (props) => {
 				answers={questionsAndAnswers[displayQuestion.number].answers}
 				question={questionsAndAnswers[displayQuestion.number].question}
 				click={checkAnswerValidity}
+
 				questionNum={displayQuestion.number}
 				correctAnswer={
 					questionsAndAnswers[displayQuestion.number].correctAnswer
 				}
+				timeIsUp={displayQuestion.timeIsUp}
 				isClicked={displayQuestion.isClicked}
 				isCorrect={displayQuestion.isCorrect}
 				isDisplay={displayQuestion.display}
