@@ -116,8 +116,8 @@ const useQuestions = () => {
 	const [displayQuestion, setDisplayQuestion] = useState({
 		display: false,
 		number: 0,
-		isClicked: false,
-		isCorrect: '',
+		isCorrectAnswer: 0,
+		userAnswerId: '',
 		timeIsUp: false,
 	});
 
@@ -125,8 +125,8 @@ const useQuestions = () => {
 		setDisplayQuestion((prevState) => ({
 			...prevState,
 			display: true,
-			isClicked: false,
-			isCorrect: '',
+			isCorrectAnswer: 0,
+			userAnswerId: '',
 			timeIsUp: false,
 		}));
 	}, []);
@@ -134,39 +134,26 @@ const useQuestions = () => {
 	const dispatch = useDispatch();
 
 	const checkAnswerValidity = useCallback(
-		(answer, questionNum, timeIsUp = false) => {
+		(answer, questionNum) => {
 			const correctAnswer = questionsAndAnswers[questionNum].correctAnswer;
 
-			if (displayQuestion.isClicked) {
+			if (displayQuestion.isCorrectAnswer !== 0) {
 				return;
 			}
 
-			if (
-				answer.toString() === correctAnswer.toString() &&
-				!displayQuestion.isClicked
-			) {
+			if (correctAnswer.toString() === answer.toString()) {
+				//good answer
 				setDisplayQuestion((prevState) => ({
 					...prevState,
-					isClicked: true,
-					isCorrect: correctAnswer.toString(),
+					isCorrectAnswer: 1,
 				}));
-
 				dispatch(saveUserCorrectAnswer());
-			} else if (
-				answer.toString() !== correctAnswer.toString() &&
-				!displayQuestion.isClicked
-			) {
+			} else {
+				//bad answer
 				setDisplayQuestion((prevState) => ({
 					...prevState,
-					isClicked: true,
-					isCorrect: answer.toString(),
-				}));
-			}
-
-			if (timeIsUp) {
-				setDisplayQuestion((prevState) => ({
-					...prevState,
-					timeIsUp: true,
+					isCorrectAnswer: -1,
+					userAnswerId: answer,
 				}));
 			}
 
@@ -178,8 +165,24 @@ const useQuestions = () => {
 				}));
 			}, 2100);
 		},
-		[displayQuestion.isClicked, dispatch]
+
+		[displayQuestion.isCorrectAnswer, dispatch]
 	);
+
+	const handleTimeIsUp = () => {
+		setDisplayQuestion((prevState) => ({
+			...prevState,
+			timeIsUp: true,
+		}));
+
+		setTimeout(() => {
+			setDisplayQuestion((prevState) => ({
+				...prevState,
+				display: false,
+				number: prevState.number + 1,
+			}));
+		}, 2100);
+	};
 
 	const history = useHistory();
 	useEffect(() => {
@@ -192,6 +195,7 @@ const useQuestions = () => {
 		questionsAndAnswers,
 		displayQuestion,
 		checkAnswerValidity,
+		handleTimeIsUp,
 		handleLeaveCountdown,
 	};
 };

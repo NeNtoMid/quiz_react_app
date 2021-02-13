@@ -14,33 +14,27 @@ const Questions = (props) => {
 		displayQuestion,
 		checkAnswerValidity,
 		handleLeaveCountdown,
+		handleTimeIsUp,
 	} = useQuestions();
 
 	let render = null;
 
 	if (!displayQuestion.display) {
-		render = (
-			<Countdown
-				leave={handleLeaveCountdown}
-			
-			/>
-		);
+		render = <Countdown leave={handleLeaveCountdown} />;
 	} else {
 		render = (
 			<Question
-			
 				answers={questionsAndAnswers[displayQuestion.number].answers}
 				question={questionsAndAnswers[displayQuestion.number].question}
 				click={checkAnswerValidity}
-
+				handleTimeIsUp={handleTimeIsUp}
 				questionNum={displayQuestion.number}
 				correctAnswer={
 					questionsAndAnswers[displayQuestion.number].correctAnswer
 				}
 				timeIsUp={displayQuestion.timeIsUp}
-				isClicked={displayQuestion.isClicked}
-				isCorrect={displayQuestion.isCorrect}
-				isDisplay={displayQuestion.display}
+				isCorrectAnswer={displayQuestion.isCorrectAnswer}
+				userAnswerId={displayQuestion.userAnswerId}
 			/>
 		);
 	}

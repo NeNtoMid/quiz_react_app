@@ -9,7 +9,8 @@ const Question = (props) => {
 	const { timerRef, timeLabelRef, questionWrapperRef } = useQuestion(
 		props.questionNum,
 		props.click,
-		props.isClicked
+		props.isCorrectAnswer,
+		props.handleTimeIsUp
 	);
 
 	return (
@@ -18,7 +19,10 @@ const Question = (props) => {
 
 			<div
 				className={classes.timer}
-				style={{ display: props.isClicked ? 'none' : 'block' }}
+				style={{
+					display:
+						props.timeIsUp || props.isCorrectAnswer !== 0 ? 'none' : 'block',
+				}}
 			>
 				<div className={classes.baseTimer}>
 					<svg
@@ -56,7 +60,7 @@ const Question = (props) => {
 				</div>
 			</div>
 
-			{props.isClicked && (
+			{(props.timeIsUp || props.isCorrectAnswer !== 0) && (
 				<div className={classes.timer}>
 					<div className={classes.baseTimer}>
 						<svg
@@ -94,27 +98,19 @@ const Question = (props) => {
 					let sectionStyles = {};
 
 					sectionStyles = { backgroundColor: '#fff', color: 'black' };
+
 					if (
-						(props.correctAnswer.toString() === answer.toString() &&
-							props.isCorrect.toString() === answer.toString() &&
-							props.isClicked) ||
-						(props.isClicked &&
-							props.correctAnswer.toString() !== props.isCorrect.toString() &&
-							answer.toString() === props.correctAnswer.toString() &&
-							!props.timeIsUp)
+						props.correctAnswer.toString() === answer.toString() &&
+						props.isCorrectAnswer !== 0
 					) {
 						sectionStyles = { backgroundColor: '#2ecc71', color: 'white' };
 					} else if (
-						props.correctAnswer.toString() !== answer.toString() &&
-						props.isCorrect.toString() !== props.correctAnswer.toString() &&
-						props.isClicked &&
-						props.isCorrect.toString() === answer
+						props.userAnswerId === answer.toString() &&
+						props.isCorrectAnswer === -1
 					) {
 						sectionStyles = { backgroundColor: '#e74c3c', color: 'white' };
 					} else if (
-						props.isClicked &&
-						props.correctAnswer.toString() !== props.isCorrect.toString() &&
-						answer.toString() === props.correctAnswer.toString() &&
+						props.correctAnswer.toString() === answer.toString() &&
 						props.timeIsUp
 					) {
 						sectionStyles = { backgroundColor: '#f1c40f', color: 'white' };

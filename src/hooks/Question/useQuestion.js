@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 
 import gsap from 'gsap';
 
-const useQuestion = (questNum, click, isClicked) => {
+const useQuestion = (questNum, click, isCorrectAnswer, handleTimeIsUp) => {
 	const timerRef = useRef(null);
 
 	const timeLabelRef = useRef(null);
@@ -36,8 +36,9 @@ const useQuestion = (questNum, click, isClicked) => {
 
 				setCircleDasharray();
 
-				if (timeLeft === -1 && !isClicked) {
-					click('', 0, true);
+				if (timeLeft === -1 && isCorrectAnswer === 0) {
+					handleTimeIsUp();
+
 					timeIsUp();
 				}
 			}, 1000);
@@ -74,7 +75,7 @@ const useQuestion = (questNum, click, isClicked) => {
 		return () => {
 			clearInterval(timerInterval);
 		};
-	}, [isClicked, click]);
+	}, [isCorrectAnswer, click]);
 
 	useEffect(() => {
 		const questionWrapperElement = questionWrapperRef.current;
